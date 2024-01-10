@@ -1,6 +1,3 @@
-﻿
-#GROUP 14
-
 #TODO LIST
 
 SO FAR SEEDED:
