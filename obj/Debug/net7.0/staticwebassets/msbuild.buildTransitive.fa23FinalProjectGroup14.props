@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/fa23FinalProjectGroup14.props" />
+</Project>

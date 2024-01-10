@@ -1,0 +1,43 @@
+﻿@model fa23FinalProjectGroup14.Models.MovieSearchViewModel
+
+
+@{
+    ViewData["Title"] = "Detailed Search";
+}
+
+
+<h1>Detailed Search</h1>
+<hr />
+<br />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="DisplaySearchResults">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tagline" class="control-label"></label>
+                <input asp-for="Tagline" class="form-control" />
+                <span asp-validation-for="Tagline" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedGenreID" class="control-label"></label>
+                @{ //populate this drop down using SelectList -- which we need to populate on the HomeController
+                }
+                @Html.DropDownListFor(model => model.SelectedGenreID, (SelectList)ViewBag.AllGenres, new { @class = "form-control" })
+                <span asp-validation-for="SelectedGenreID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Search" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to Homepage</a>
+</div>
